@@ -175,6 +175,7 @@ def summarize_one_abstract(text):
     )
     return response['choices'][0]['text']
 
+@st.cache
 def summarize_two_abstracts(bp0, bp1):
     prompt = make_dual_prompt(bp0, bp1)
     response = openai.Completion.create(
